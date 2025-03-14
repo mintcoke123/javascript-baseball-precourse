@@ -6,18 +6,20 @@ const resultText = document.getElementById("result");
 const restartButton = document.getElementById("game-restart-button");
 let randomNumber = randomNumberGenerator(); //랜덤넘버 생성
 
-function randomNumberGenerator() { //랜덤한 숫자를 생성하는 함수
+function randomNumberGenerator() {
+  //랜덤한 숫자를 생성하는 함수
   const numbers = new Set();
   while (numbers.size < 3) {
-    const randomNumber = MissionUtils.Random.pickNumberInRange(1, 9);
+    const randomNumber = window.MissionUtils.Random.pickNumberInRange(1, 9);
     numbers.add(randomNumber);
   }
-  const totalNumber= [...numbers];
+  const totalNumber = [...numbers];
   console.log(totalNumber);
   return totalNumber.join("");
 }
 
-function showResult() { //결과를 출력하는 함수
+function showResult() {
+  //결과를 출력하는 함수
   const userInput = userInputText.value;
 
   console.log(userInput);
@@ -29,7 +31,8 @@ function showResult() { //결과를 출력하는 함수
 
   const gameResult = bsGame.play(randomNumber, userInput);
   console.log(gameResult);
-  if (gameResult.includes("3스트라이트")) { //게임성공 시 재시작
+  if (gameResult.includes("3스트라이크")) {
+    //게임성공 시 재시작
     resultText.innerHTML =
       "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>";
     toggleRestartButton(true);
@@ -48,7 +51,9 @@ function isNumber(input) {
 
 function toggleRestartButton(isOn) {
   restartButton.style.display = isOn ? "block" : "none";
-  resultText.innerHTML= isOn? "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>":"<strong></strong>"
+  resultText.innerHTML = isOn
+    ? "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>"
+    : "<strong></strong>";
 }
 
 function onClickSubmit() {
@@ -56,11 +61,10 @@ function onClickSubmit() {
 }
 
 function onClickRestart() {
-  userInputText.value="";
+  userInputText.value = "";
   randomNumber = randomNumberGenerator();
   toggleRestartButton(false);
 }
-
 
 window.onClickSubmit = onClickSubmit; //전역객체
 window.onClickRestart = onClickRestart; //전역객체
