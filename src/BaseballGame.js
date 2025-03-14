@@ -1,4 +1,4 @@
-export default class BaseballGame {
+export default class BaseballGame { //baseballgame 클래스 정의
   play(computerInputNumbers, userInputNumbers) {
     const totalResult = this.calculateResult(
       computerInputNumbers,
@@ -18,8 +18,11 @@ export default class BaseballGame {
         ball++;
       }
     }
+    console.log({strike,ball});
     return { strike, ball };
   }
+
+  
 
   textResult({ strike, ball }) {
     if (strike === 0 && ball == 0) {
@@ -27,12 +30,12 @@ export default class BaseballGame {
     } else {
       let text = "";
       if (ball > 0) {
-        text += "${ball}볼 ";
+        text += `${ball}볼 `;
       }
       if (strike > 0) {
-        text += "${strike}스트라이트";
+        text += `${strike}스트라이트`;
       }
-      return result;
+      return text.trim();
     }
   }
 }
