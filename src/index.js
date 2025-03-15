@@ -13,16 +13,12 @@ function randomNumberGenerator() {
     const randomNumber = window.MissionUtils.Random.pickNumberInRange(1, 9);
     numbers.add(randomNumber);
   }
-  const totalNumber = [...numbers];
-  console.log(totalNumber);
-  return totalNumber.join("");
+  return [...numbers].join("");
 }
 
 function showResult() {
   //결과를 출력하는 함수
   const userInput = userInputText.value;
-
-  console.log(userInput);
   let result = "";
   if (!isValidInput(userInput)) {
     alert("잘못된 입력입니다.");
@@ -30,12 +26,10 @@ function showResult() {
   }
 
   const gameResult = bsGame.play(randomNumber, userInput);
-  console.log(gameResult);
   if (gameResult.includes("3스트라이크")) {
-    //게임성공 시 재시작
+    toggleRestartButton(true);
     resultText.innerHTML =
       "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>";
-    toggleRestartButton(true);
   } else {
     resultText.textContent = gameResult;
   }
@@ -51,9 +45,6 @@ function isNumber(input) {
 
 function toggleRestartButton(isOn) {
   restartButton.style.display = isOn ? "block" : "none";
-  resultText.innerHTML = isOn
-    ? "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>"
-    : "<strong></strong>";
 }
 
 function onClickSubmit() {
@@ -63,6 +54,7 @@ function onClickSubmit() {
 function onClickRestart() {
   userInputText.value = "";
   randomNumber = randomNumberGenerator();
+  resultText.innerHTML = "";
   toggleRestartButton(false);
 }
 
