@@ -1,14 +1,14 @@
 export default class BaseballGame {
   //baseballgame 클래스 정의
   play(computerInputNumbers, userInputNumbers) {
-    const totalResult = this.calculateResult(
+    const totalResult = this.calculateStrikeBall(
       computerInputNumbers,
       userInputNumbers
     );
     return this.textResult(totalResult);
   }
 
-  calculateResult(computerInputNumbers, userInputNumbers) {
+  calculateStrikeBall(computerInputNumbers, userInputNumbers) {
     let ball = 0;
     let strike = 0;
 
@@ -22,8 +22,8 @@ export default class BaseballGame {
     return { strike, ball };
   }
 
-  textResult({ strike, ball }) {
-    if (strike === 0 && ball == 0) {
+  resultToText({ strike, ball }) {
+    if (strike === 0 && ball === 0) {
       return "낫싱";
     } else {
       let text = "";

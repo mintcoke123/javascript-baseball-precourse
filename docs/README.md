@@ -53,4 +53,4 @@ index.js
 ## 피드백 적용목록
 
 -git check 명령어로 README.md 롤백
--docs에 기능구현목록, 피드백 적용목록 README.md 생성 -필요없는 파일 삭제
+-docs에 기능구현목록, 피드백 적용목록 README.md 생성 -필요없는 파일 삭제 -패키지 중복사용 수정(CDN을 통한 패키지 로드 사용)
