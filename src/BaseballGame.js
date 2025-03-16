@@ -5,7 +5,7 @@ export default class BaseballGame {
       computerInputNumbers,
       userInputNumbers
     );
-    return this.textResult(totalResult);
+    return this.resultToText(totalResult);
   }
 
   calculateStrikeBall(computerInputNumbers, userInputNumbers) {
