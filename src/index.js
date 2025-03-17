@@ -4,6 +4,7 @@ const bsGame = new BaseballGame();
 const userInputText = document.getElementById("user-input");
 const resultText = document.getElementById("result");
 const restartButton = document.getElementById("game-restart-button");
+const submitButton = document.getElementById("user-submit");
 let randomNumber = randomNumberGenerator(); //랜덤넘버 생성
 
 function randomNumberGenerator() {
@@ -60,5 +61,6 @@ function onClickRestart() {
 
 window.onClickSubmit = onClickSubmit; //전역객체
 window.onClickRestart = onClickRestart; //전역객체
+
 
 toggleRestartButton(false);
