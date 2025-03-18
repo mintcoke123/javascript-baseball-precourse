@@ -15,7 +15,11 @@
         틀린 예) 122
       </p>
       <form>
-        <input type="text" id="user-input" onkeypress="if(event.keyCode=='13'){event.preventDefault(); onClickSubmit();}" />
+        <input
+          type="text"
+          id="user-input"
+          onkeydown="if(event.key === 'Enter'){ event.preventDefault(); onClickSubmit(); }"
+        />
         <button type="button" id="user-submit" onclick="onClickSubmit()">
           확인
         </button>
