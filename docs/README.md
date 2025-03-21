@@ -56,7 +56,8 @@ index.js
 - view 구현
 - controller 구현
 - add 구현
-
+- html 수정
+- controller 리팩토링
 
 ## 0주차 피드백 적용목록
 
