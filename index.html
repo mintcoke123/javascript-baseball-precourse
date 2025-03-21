@@ -15,22 +15,18 @@
         틀린 예) 122
       </p>
       <form>
-        <input
-          type="text"
-          id="user-input"
-          onkeydown="if(event.key === 'Enter'){ event.preventDefault(); onClickSubmit(); }"
-        />
-        <button type="button" id="user-submit" onclick="onClickSubmit()">
+        <input type="text" id="user-input"/>
+        <button type="button" id="submit"">
           확인
         </button>
       </form>
       <h3>📄 결과</h3>
       <div id="result"></div>
-      <button type="button" id="game-restart-button" onclick="onClickRestart()">
+      <button type="button" id="game-restart-button">
         재시작
       </button>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@woowacourse/mission-utils@1.0.1/dist/mission-utils.min.js"></script>
-    <script type="module" src="src/index.js"></script>
+    <script type="module" src="src/app/app.js"></script>
   </body>
 </html>

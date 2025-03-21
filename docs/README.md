@@ -54,6 +54,8 @@ index.js
 - baseballGame.js, index.js 삭제
 - model 구현
 - view 구현
+- controller 구현
+- add 구현
 
 
 ## 0주차 피드백 적용목록
