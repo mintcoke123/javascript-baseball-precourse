@@ -15,7 +15,7 @@ export default class Controller{
     this.model.randomNumberGenerator();
   }
 
-  userSubmit(){ //
+  userSubmit(){
     this.model.userInput(this.view.userInputText.value);
     if(!this.model.isValidInput()){
       return this.view.alertMessage();
