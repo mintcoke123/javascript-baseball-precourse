@@ -2,11 +2,11 @@ export default class Model {
   constructor(){
     this.computerInputNumbers="";
     this.userInputNumbers="";
-    this.gameResult="";
+
   }
   play() {  //타당한 입력이 아니면 경고를 출력하고, 아니면 string으로 결괏값을 반환하는 함수
     const totalResult = this.calculateStrikeBall(this.computerInputNumbers, this.userInputNumbers);
-    this.gameResult = this.generateStrikeBallMessage(totalResult);
+    return this.generateStrikeBallMessage(totalResult);
   }
 
   calculateStrikeBall() { //두 숫자에서 strike, ball을 도출하는 함수

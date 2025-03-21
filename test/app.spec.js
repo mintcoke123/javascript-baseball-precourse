@@ -3,7 +3,7 @@ describe("구현 결과가 요구사항과 일치해야 한다.", () => {
   const SELECTOR = {
     INPUT: "#user-input",
     SUBMIT: "#submit",
-    RESULT: "#result",
+    RESULT: "#result"
   };
 
   before(() => {
@@ -66,5 +66,16 @@ describe("구현 결과가 요구사항과 일치해야 한다.", () => {
       .then(() => {
         expect(alertStub).to.be.called;
       });
+  });
+
+  it("정답을 맞췄을 때 정답 텍스트가 출력되어야 한다", () => {
+    // given
+    cy.stubRandomReturns([4, 2, 5]);
+
+    // when
+    cy.typeUserInput("425");
+
+    //then
+    cy.get(SELECTOR.RESULT).should("have.text", "정답을 맞추셨습니다!게임을 다시 시작하시겠습니까?");
   });
 });
