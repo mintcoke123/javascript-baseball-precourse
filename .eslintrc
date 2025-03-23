@@ -1,0 +1,15 @@
+{
+  "extends": [
+    "airbnb-base",
+    "plugin:cypress/recommended"
+  ],
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "mocha": true
+  },
+  "plugins": ["cypress"],
+  "globals": {
+    "MissionUtils": "readonly"
+  }
+}
