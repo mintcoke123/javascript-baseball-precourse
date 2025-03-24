@@ -6,12 +6,14 @@ export default class BaseballGameController {
 
   restart() {
     this.view.gameOverHide();
+    this.view.enableSubmitButton();
     this.model.generateRandomNumberString();
   }
 
   gameStart() {
     this.initEventListeners();
     this.view.gameOverHide();
+    this.view.enableSubmitButton();
     this.model.generateRandomNumberString();
   }
 

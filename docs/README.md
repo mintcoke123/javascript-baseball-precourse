@@ -74,3 +74,4 @@ index.js
 - eslint를 통해 Airbnb 코드 컨벤션 준수
 - Code Spell Checker를 사용해 변수 스펠링 검수
 - 함수명 변경
+- model.js 캡슐화
