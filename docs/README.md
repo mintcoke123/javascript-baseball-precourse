@@ -75,3 +75,4 @@ index.js
 - Code Spell Checker를 사용해 변수 스펠링 검수
 - 함수명 변경
 - model.js 캡슐화
+- 정답 맞췄을 때 버튼 눌리는 문제 해결
