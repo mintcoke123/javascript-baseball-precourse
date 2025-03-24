@@ -1,4 +1,4 @@
-export default class View {
+export default class BaseballGameView {
   constructor() {
     this.userInputText = document.getElementById('user-input');
     this.resultText = document.getElementById('result');

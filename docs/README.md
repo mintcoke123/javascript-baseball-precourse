@@ -69,3 +69,5 @@ index.js
 - 엔터 입력시 웹 새로고침 문제 해결, 이제 엔터 시 입력 Submit
 
 ## 1주차 피드백 적용목록
+- eslint를 통해 Airbnb 코드 컨벤션 준수
+- Code Spell Checker를 사용해 변수 스펠링 검수

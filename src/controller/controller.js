@@ -1,4 +1,4 @@
-export default class Controller {
+export default class BaseballGameController {
   constructor(view, model) {
     this.view = view;
     this.model = model;
@@ -27,7 +27,7 @@ export default class Controller {
     return this.view.showGameResult(gameResult);
   }
 
-  initEventListeners() { // 초기 로드 시 이벤트 바인딩
+  initEventListeners() {
     this.view.submitButton.addEventListener('click', () => {
       this.userSubmit();
     });
