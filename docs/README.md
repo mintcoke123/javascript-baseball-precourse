@@ -51,6 +51,7 @@ index.js
   - 인자로 전달된 값에 따라 재시작 버튼을 보이거나 숨기는 기능
 
 [mvc 패턴 적용]
+
 - baseballGame.js, index.js 삭제
 - model 구현
 - view 구현
@@ -69,5 +70,7 @@ index.js
 - 엔터 입력시 웹 새로고침 문제 해결, 이제 엔터 시 입력 Submit
 
 ## 1주차 피드백 적용목록
+
 - eslint를 통해 Airbnb 코드 컨벤션 준수
 - Code Spell Checker를 사용해 변수 스펠링 검수
+- 함수명 변경

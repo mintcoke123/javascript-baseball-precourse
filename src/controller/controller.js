@@ -6,13 +6,13 @@ export default class BaseballGameController {
 
   restart() {
     this.view.gameOverHide();
-    this.model.randomNumberGenerator();
+    this.model.generateRandomNumberString();
   }
 
   gameStart() {
     this.initEventListeners();
     this.view.gameOverHide();
-    this.model.randomNumberGenerator();
+    this.model.generateRandomNumberString();
   }
 
   userSubmit() {
@@ -21,23 +21,23 @@ export default class BaseballGameController {
       return this.view.alertMessage();
     }
     const gameResult = this.model.play();
-    if (gameResult === '3스트라이크') {
+    if (gameResult === "3스트라이크") {
       return this.view.gameOverShow();
     }
     return this.view.showGameResult(gameResult);
   }
 
   initEventListeners() {
-    this.view.submitButton.addEventListener('click', () => {
+    this.view.submitButton.addEventListener("click", () => {
       this.userSubmit();
     });
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Enter') {
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
         this.userSubmit();
         event.preventDefault();
       }
     });
-    this.view.restartButton.addEventListener('click', () => {
+    this.view.restartButton.addEventListener("click", () => {
       this.restart();
     });
   }
