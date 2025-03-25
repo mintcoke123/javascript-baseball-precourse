@@ -54,7 +54,7 @@ export default class BaseballGameModel {
   isValidInput = () =>
     this.isNumbersBetweenOneAndNine() && this.isDifferent() && this.isThree();
 
-  isNumbersBetweenOneAndNine = () =>
+  isDigitsBetweenOneAndNine = () =>
     [...this.#userInputNumbers].every(
       (element) => element >= "1" && element <= "9"
     );
