@@ -4,20 +4,20 @@ export default class BaseballGameController {
     this.model = model;
   }
 
-  restart() {
+  restart = () => {
     this.view.gameOverHide();
     this.view.enableSubmitButton();
     this.model.generateRandomNumberString();
-  }
+  };
 
-  gameStart() {
+  gameStart = () => {
     this.initEventListeners();
     this.view.gameOverHide();
     this.view.enableSubmitButton();
     this.model.generateRandomNumberString();
-  }
+  };
 
-  userSubmit() {
+  userSubmit = () => {
     this.model.userInput(this.view.userInputText.value);
     if (!this.model.isValidInput()) {
       return this.view.alertMessage();
@@ -27,9 +27,9 @@ export default class BaseballGameController {
       return this.view.gameOverShow();
     }
     return this.view.showGameResult(gameResult);
-  }
+  };
 
-  initEventListeners() {
+  initEventListeners = () => {
     this.view.submitButton.addEventListener("click", () => {
       this.userSubmit();
     });
@@ -42,5 +42,5 @@ export default class BaseballGameController {
     this.view.restartButton.addEventListener("click", () => {
       this.restart();
     });
-  }
+  };
 }

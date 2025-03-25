@@ -6,49 +6,49 @@ export default class BaseballGameView {
     this.submitButton = document.getElementById("submit");
   }
 
-  restartButtonShow() {
+  restartButtonShow = () => {
     this.restartButton.style.display = "block";
-  }
+  };
 
-  restartButtonHide() {
+  restartButtonHide = () => {
     this.restartButton.style.display = "none";
-  }
+  };
 
-  showGameResult(gameResult) {
+  showGameResult = (gameResult) => {
     this.resultText.textContent = gameResult;
-  }
+  };
 
-  correctMessageShow() {
+  correctMessageShow = () => {
     this.resultText.innerHTML =
       "<strong>정답을 맞추셨습니다!</strong><p><br>게임을 다시 시작하시겠습니까?</p>";
-  }
+  };
 
-  correctMessageHide() {
+  correctMessageHide = () => {
     this.resultText.innerHTML = "";
-  }
+  };
 
-  alertMessage() {
+  alertMessage = () => {
     alert("잘못된 입력입니다.");
     this.resultText.innerHTML = "<strong>잘못된 입력입니다</strong>";
-  }
+  };
 
-  gameOverHide() {
+  gameOverHide = () => {
     this.userInputText.value = "";
     this.correctMessageHide();
     this.restartButtonHide();
-  }
+  };
 
-  gameOverShow() {
+  gameOverShow = () => {
     this.correctMessageShow();
     this.restartButtonShow();
     this.disableSubmitButton();
-  }
+  };
 
-  enableSubmitButton() {
+  enableSubmitButton = () => {
     this.submitButton.disabled = false;
-  }
+  };
 
-  disableSubmitButton() {
+  disableSubmitButton = () => {
     this.submitButton.disabled = true;
-  }
+  };
 }

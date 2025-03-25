@@ -11,12 +11,12 @@ export default class BaseballGameModel {
     this.#ball = 0;
   }
 
-  play() {
+  play = () => {
     this.#calculateStrikeBall();
     return this.#generateStrikeBallMessage();
-  }
+  };
 
-  #calculateStrikeBall() {
+  #calculateStrikeBall = () => {
     this.#ball = 0;
     this.#strike = 0;
 
@@ -29,46 +29,37 @@ export default class BaseballGameModel {
         this.#ball += 1;
       }
     }
-  }
+  };
 
-  #generateStrikeBallMessage() {
+  #generateStrikeBallMessage = () => {
     if (this.#strike === 0 && this.#ball === 0) return "낫싱";
     if (this.#strike === 0) return `${this.#ball}볼`;
     if (this.#ball === 0) return `${this.#strike}스트라이크`;
     return `${this.#ball}볼 ${this.#strike}스트라이크`;
-  }
+  };
 
-  generateRandomNumberString() {
+  generateRandomNumberString = () => {
     const numbers = new Set();
     while (numbers.size < 3) {
       const randomNumber = MissionUtils.Random.pickNumberInRange(1, 9);
       numbers.add(randomNumber);
     }
     this.#computerInputNumbers = [...numbers].join("");
-  }
+  };
 
-  userInput(input) {
+  userInput = (input) => {
     this.#userInputNumbers = input;
-  }
+  };
 
-  isValidInput() {
-    return (
-      this.isNumbersBetweenOneAndNine() && this.isDifferent() && this.isThree()
-    );
-  }
+  isValidInput = () =>
+    this.isNumbersBetweenOneAndNine() && this.isDifferent() && this.isThree();
 
-  isNumbersBetweenOneAndNine() {
-    return [...this.#userInputNumbers].every(
+  isNumbersBetweenOneAndNine = () =>
+    [...this.#userInputNumbers].every(
       (element) => element >= "1" && element <= "9"
     );
-  }
 
-  isDifferent() {
-    const uniqueNumber = [...new Set(this.#userInputNumbers)];
-    return uniqueNumber.length === 3;
-  }
+  isDifferent = () => new Set(this.#userInputNumbers).size === 3;
 
-  isThree() {
-    return this.#userInputNumbers.length === 3;
-  }
+  isThree = () => this.#userInputNumbers.length === 3;
 }
