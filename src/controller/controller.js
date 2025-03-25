@@ -30,14 +30,9 @@ export default class BaseballGameController {
   };
 
   initEventListeners = () => {
-    this.view.submitButton.addEventListener("click", () => {
+    this.view.submitButton.addEventListener("click", (event) => {
+      event.preventDefault();
       this.userSubmit();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Enter") {
-        this.userSubmit();
-        event.preventDefault();
-      }
     });
     this.view.restartButton.addEventListener("click", () => {
       this.restart();
